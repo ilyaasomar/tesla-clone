@@ -1,12 +1,19 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import { Link } from "expo-router";
+import { Pressable } from "react-native";
+
 const MenuOption = ({ item }) => {
   return (
     <Link href={item.href} asChild>
       <Pressable style={styles.optionRow}>
         {/* icon */}
-        <MaterialCommunityIcons name={item.iconName} size={26} color="gray" />
+        {item.icon ? (
+          <item.icon />
+        ) : (
+          <MaterialCommunityIcons name={item.iconName} size={26} color="gray" />
+        )}
+
         {/* text */}
         <Text style={styles.optionText}>{item.name}</Text>
         {/* icon */}
@@ -23,15 +30,16 @@ const MenuOption = ({ item }) => {
 
 const styles = StyleSheet.create({
   optionRow: {
-    marginVertical: 20,
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
+    marginVertical: 20,
   },
   optionText: {
     color: "#eee",
+    fontSize: 18,
     fontWeight: "bold",
     marginLeft: 10,
-    fontSize: 18
-  }
+  },
 });
+
 export default MenuOption;

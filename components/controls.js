@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import {
   Entypo,
   MaterialCommunityIcons,
   FontAwesome5,
-  Ionicons
+  Ionicons,
 } from "@expo/vector-icons";
 const Controls = () => {
   return (
@@ -15,11 +15,11 @@ const Controls = () => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   controls: {
     flexDirection: "row",
-    justifyContent: "space-around"
-  }
+    justifyContent: "space-around",
+    marginVertical: 20,
+  },
 });
 export default Controls;

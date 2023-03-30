@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import menuOptions from "../assets/menuOptions";
 import { Image } from "react-native";
@@ -11,19 +11,15 @@ export default function Page() {
       <View style={styles.header}>
         <View>
           <Text style={styles.title}>My Model S</Text>
-          <Text style={styles.subtitle}>Parking.</Text>
+          <Text style={styles.subtitle}>Parked.</Text>
         </View>
         <FontAwesome name="user-circle" size={30} color="gray" />
       </View>
-      {/* image */}
-
       <Image source={car} style={styles.image} resizeMode="contain" />
-
-      {/*controls  */}
-      {/* <Controls /> */}
+      {/* controls and Menu Options */}
       <FlatList
-        showsVerticalScrollIndicator={false}
         data={menuOptions}
+        showsVerticalScrollIndicator={false}
         renderItem={MenuOption}
         ListHeaderComponent={Controls}
       />
@@ -35,25 +31,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
-    backgroundColor: "#161818"
+    backgroundColor: "#161818",
   },
   header: {
     marginTop: 50,
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   title: {
     fontSize: 24,
     color: "#eee",
     fontWeight: "bold",
-    marginBottom: 8
+    marginBottom: 8,
   },
   subtitle: {
     color: "gray",
-    fontWeight: "500"
+    fontWeight: 500,
   },
   image: {
     width: "100%",
-    height: 300
-  }
+    height: 300,
+  },
 });
